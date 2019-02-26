@@ -14,8 +14,8 @@ echo ------------------------------------------------
 
 echo Stop redis master
 docker pause redis-cluster_master_1
-echo Wait for 10 seconds
-sleep 10
+echo Wait for 15 seconds
+sleep 15
 echo Current infomation of sentinel
 docker exec redis-cluster_sentinel_1 redis-cli -p 26379 info Sentinel
 echo Current master is
