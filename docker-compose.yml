@@ -45,6 +45,7 @@ slave-5:
     - master:redis-master
 sentinel:
   build: sentinel
+  container_name: redis-cluster-sentinel
   environment:
     - SENTINEL_DOWN_AFTER=5000
     - SENTINEL_FAILOVER=5000
