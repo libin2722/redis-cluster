@@ -1,9 +1,11 @@
 master:
   image: redis:3
+  container_name: redis-cluster_master
   ports:
     - '30001:6379'
 slave-1:
   image: redis:3
+  container_name: redis-cluster-slave-1
   ports:
     - '30002:6379'
   command: redis-server --slaveof redis-master 6379
@@ -11,6 +13,7 @@ slave-1:
     - master:redis-master
 slave-2:
   image: redis:3
+  container_name: redis-cluster-slave-2
   ports:
     - '30003:6379'
   command: redis-server --slaveof redis-master 6379
@@ -18,6 +21,7 @@ slave-2:
     - master:redis-master
 slave-3:
   image: redis:3
+  container_name: redis-cluster-slave-3
   ports:
     - '30004:6379'
   command: redis-server --slaveof redis-master 6379
@@ -25,6 +29,7 @@ slave-3:
     - master:redis-master
 slave-4:
   image: redis:3
+  container_name: redis-cluster-slave-4
   ports:
     - '30005:6379'
   command: redis-server --slaveof redis-master 6379
@@ -32,6 +37,7 @@ slave-4:
     - master:redis-master
 slave-5:
   image: redis:3
+  container_name: redis-cluster-slave-5
   ports:
     - '30006:6379'
   command: redis-server --slaveof redis-master 6379
